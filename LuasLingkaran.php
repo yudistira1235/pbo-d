@@ -1,14 +1,29 @@
 <?php
 
+namespace App\Math; //pasang namespace
+
 class LuasLingkaran {
 
     public const phi = 3.14;
     public int $jari;
+
+    public function __construct($isiJari = 1) {
+        $this->jari = $isiJari;
+    }
+
+    public function tampil($nama = 'ban') {
+        $rumus = LuasLingkaran::phi * $this ->jari * $this->jari;
+        echo "Lingkaran {$nama} Hasilnya adalah: {$rumus} ";
+    }
+
+    public static function testing() {
+        echo "<br/>";
+        echo "Ini dari static";
+    }
+    public function __destruct() {
+        echo "<br/>";
+        echo "udah ah cape";
+
+    }
 }
 
-$Lingkaran = new LuasLingkaran();
-$Lingkaran->jari = 7;
-
-$rumus = LuasLingkaran::phi * $Lingkaran->jari * $Lingkaran->jari;
-
-echo "Hasilnya adalah: ". $rumus;
